@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useFeedbackContext } from "./context/FeedbackContext";
 import Rating from "./Rating";
 import Button from "./UI/Button";
 import Card from "./UI/Card";
 
-const FeedbackForm = ({ onAdd }) => {
+const FeedbackForm = () => {
   const [input, setInput] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(10);
+  const { onAddFeedback, editFeedback, onUpdateFeedback } =
+    useFeedbackContext();
+
+  useEffect(() => {
+    if (editFeedback.edit === true) {
+      console.log("editFeedback is true", editFeedback.edit);
+      setBtnDisabled(false);
+      setInput(editFeedback.item.text);
+      setRating(editFeedback.item.rating);
+    }
+  }, [editFeedback]);
+
   const handleInputChange = (e) => {
     if (e.target.value === "") {
       setMessage(null);
@@ -26,6 +39,7 @@ const FeedbackForm = ({ onAdd }) => {
     console.log("rating is", ratingValue);
     setRating(ratingValue);
   };
+
   const addFeedbackHandler = (e) => {
     e.preventDefault();
     if (input !== "" && input.trim().length > 10) {
@@ -34,7 +48,11 @@ const FeedbackForm = ({ onAdd }) => {
         text: input,
         rating: rating,
       };
-      onAdd(newFeedback);
+      if (editFeedback.edit === true) {
+        onUpdateFeedback(editFeedback.item.id, newFeedback);
+      } else {
+        onAddFeedback(newFeedback);
+      }
       setInput("");
     }
   };

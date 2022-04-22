@@ -29,6 +29,9 @@ body {
   background-color: var(--dark-blue);
   color: var(--white);
 }
+a {
+  text-decoration: none;
+}
 .text-center {
   text-align: center;
 }
@@ -42,7 +45,7 @@ body {
 header {
   text-align: center;
   background: black;
-  padding: 1rem 0;
+  padding: 2em 0;
 }
 header h1 {
   text-transform: uppercase;
@@ -77,14 +80,26 @@ header h1 {
   justify-content: center;
   font-size: 1.5rem;
 }
-.icon-cross {
+.edit-delete {
+  display: flex;
   position: absolute;
   top: 1rem;
   right: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+.icon-cross,
+.icon-edit {
   width: 1rem;
   height: 1rem;
   color: grey;
+  cursor: pointer;
 }
+.icon-edit {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
 .feedback-stats {
   font-size: 1.4rem;
   display: flex;
@@ -178,4 +193,28 @@ input[type="radio"]:checked ~ label {
 .btn-primary {
   color: #fff;
   background: var(--golden);
+}
+
+footer {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+.bulb-icon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--golden);
+  transition: all 0.3s ease;
+}
+.bulb-icon:hover {
+  width: 4.1rem;
+  height: 4.1rem;
+  color: rgb(250, 185, 64);
+}
+.bulb-icon.active {
+  color: red;
+}
+.about {
+  font-size: 1.6rem;
+  line-height: 3rem;
 }
