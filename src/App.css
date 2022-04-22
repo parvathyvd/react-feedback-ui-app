@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-grey: #3b444d;
+  --dark-blue: hsl(256, 88%, 20%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --golden: #fc7613;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+.text-center {
+  text-align: center;
+}
+.fs-big {
+  font-size: 1.3rem;
+}
+.container {
+  max-width: 50rem;
+  margin: 5rem auto;
+}
+header {
+  text-align: center;
+  background: black;
+  padding: 1rem 0;
+}
+header h1 {
+  text-transform: uppercase;
+  color: var(--golden);
+  letter-spacing: 0.7rem;
+}
+.card {
+  background: #fff;
+  padding: 3rem 4rem;
+  color: grey;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.196);
+}
+
+.feedback-item {
+  position: relative;
+}
+.stats {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  background: var(--golden);
+  border-radius: 50%;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.icon-cross {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  color: grey;
+}
+.feedback-stats {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+}
+.input-group {
+  position: relative;
+}
+.input-group input {
+  width: 100%;
+  margin: 1rem auto;
+  border: none;
+  box-shadow: 0rem 0.1rem 0.5rem rgba(0, 0, 0, 0.196);
+  padding: 1.5rem;
+  color: grey;
+  border-radius: 1rem;
+  outline: none;
+}
+.input-group button {
+  margin-left: 2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 1.2rem;
+  margin: 2rem auto;
+}
+
+.rating li {
+  outline: none;
+  position: relative;
+  color: black;
+  cursor: pointer;
+}
+.rating label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: 0rem;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+input[type="radio"] {
+  position: relative;
+  top: 1rem;
+  left: 0rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked ~ label {
+  background: var(--golden);
+  color: #fff;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0rem 0.2rem 0.5rem rgba(0, 0, 0, 0.396);
+}
+.btn-primary {
+  color: #fff;
+  background: var(--golden);
+}
